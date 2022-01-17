@@ -71,9 +71,14 @@
     border-color: var(--fill);
 }
 
+btn:active {
+    transform:scale(0.97) ;
+}
+
 .btn {
     border: 0;
     margin: 2rem 0;
+    transition: transform 0.3s ease;
 }
 
 .btn:focus {
