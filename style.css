@@ -1,0 +1,86 @@
+:root {
+    --fill: #3498db;
+    --empty: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    max-width: 80%;
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    width: 100%;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    height: 4px;
+    background-color: var(--empty);
+    position: absolute;
+    z-index: -1;
+}
+
+.line {
+    border-radius: 5px;
+    background-color: var(--fill);
+    height: 4px;
+    width: 100%;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    border: 2px solid var(--fill);
+}
+
+.item {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--empty);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #999;
+    transition: all 0.6s ease-in;
+    margin: -15px;
+}
+
+.item.active {
+    border-color: var(--fill);
+}
+
+.btn {
+    border: 0;
+    margin: 2rem 0;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:disabled {
+    background-color: var(--empty);
+    cursor: not-allowed;
+}
